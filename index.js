@@ -28,7 +28,7 @@ function addNumbers(num1, num2) {
  * ### Challenge `sayGoodbye`
  * 
  * @instructions
- * This function should take an a name as an argument,
+ * This function should take a name as an argument,
  * and return a string that says 'Goodbye, {name}. Have a great day.'
  * 
  * For example, if we invoke `sayGoodbye`
@@ -36,9 +36,12 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
-}
+
+// function sayGoodbye(/* code here */name) {
+//   /* code here */
+//   console.log(`Goodbye, ${name}. Have a great day.`)
+// }
+// sayGoodbye('Arthur')
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -54,15 +57,16 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
+function temperatureCtoF(/* code here */tempCelsius) {
   /* code here */
+  tempFahrenheit = (tempCelsius * (9/5)) + 32
+  return Math.round(tempFahrenheit)
 }
-
 /**
  * ### Challenge `temperatureInF`
  * 
  * @instructions
- * This function should take an a temperature and a unit (either 'F' or 'C') as arguments,
+ * This function should take a temperature and a unit (either 'F' or 'C') as arguments,
  * and return the temperature in fahrenheit, rounded to the nearest whole number. 
  * 
  * For example, if we invoke `temperatureInF`
@@ -75,9 +79,18 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(temp, metric) {
+  if (metric === 'F'){
+    // console.log(Math.round(temp) + metric)
+    return Math.round(temp) + metric;
+  }else if (metric === 'C'){
+    // console.log(temperatureCtoF(temp) + 'F')
+    return temperatureCtoF(temp) + 'F'
+  }else{
+    console.log('Improper temperature measurement value.')
+  }
 }
+// temperatureInF(35,'C')
 
 
 /**
@@ -96,10 +109,15 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(number,firstName, mail) {
+  const person ={
+    id: number,
+    name: firstName,
+    email: mail,
+  }
+  // console.log(person)
 }
-
+makePersonObject (5, 'leia', 'leia@leia.com')
 /**
  * ### Challenge `getName`
  * 
